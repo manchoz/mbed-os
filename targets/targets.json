@@ -8880,6 +8880,7 @@
         },
         "overrides": {
             "mpu-rom-end": "0x1fffffff",
+            "deep-sleep-latency": 1,
             "tickless-from-us-ticker": true
         },
         "inherits": ["Target"],
