@@ -9824,5 +9824,17 @@
     "__build_tools_metadata__": {
         "version": "1",
         "public": false
+    },
+    "NRF52832_MDK": {
+        "inherits": ["MCU_NRF52832"],
+        "release_versions": ["5"],
+        "detect_code": ["1024"],
+        "device_name": "nRF52832_xxAA"
+    },
+    "NRF52840_MDK": {
+        "inherits": ["MCU_NRF52840"],
+        "release_versions": ["5"],
+        "device_name": "nRF52840_xxAA",
+        "detect_code": ["1026"]
     }
 }
