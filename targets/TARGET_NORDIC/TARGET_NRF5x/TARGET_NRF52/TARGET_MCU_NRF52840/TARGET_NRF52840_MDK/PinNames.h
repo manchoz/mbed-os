@@ -51,8 +51,6 @@ typedef enum {
     PIN_OUTPUT
 } PinDirection;
 
-#define PORT_SHIFT  3
-
 ///> define macro producing for example Px_y = NRF_GPIO_PIN_MAP(x, y)
 #define PinDef(port_num, pin_num) P##port_num##_##pin_num = NRF_GPIO_PIN_MAP(port_num, pin_num)
 
@@ -159,30 +157,36 @@ typedef enum {
     p45 = P1_13,
     p46 = P1_14,
     p47 = P1_15,
-    // Not connected
-    NC = (int)0xFFFFFFFF,
-    
-    LED1    = p22,
-    LED2    = p23,
-    LED3    = p24,
 
-    BUTTON1 = p27,   // on Base Dock Grove#1
-    BUTTON2 = p29,   // on Base Dock Grove#2
-    BUTTON3 = p31,   // on Base Dock Grove#3
-    BUTTON4 = p3,    // on Base Dock Grove#4
+            
+    LED_RED   = p22,
+    LED_GREEN = p23,
+    LED_BLUE  = p24,
+
+    LED1 = LED_RED,
+    LED2 = LED_GREEN,
+    LED3 = LED_BLUE,
+
+    BUTTON_USER = p32,
+    BUTTON_GROVE1 = p27,   // on Base Dock Grove#1
+    BUTTON_GROVE2 = p29,   // on Base Dock Grove#2
+    BUTTON_GROVE3 = p31,   // on Base Dock Grove#3
+    BUTTON_GROVE4 = p3,    // on Base Dock Grove#4
+
+    BUTTON1 = BUTTON_GROVE1, // on Base Dock Grove#1
+    BUTTON2 = BUTTON_GROVE2, // on Base Dock Grove#2
+    BUTTON3 = BUTTON_GROVE3, // on Base Dock Grove#3
+    BUTTON4 = BUTTON_GROVE4, // on Base Dock Grove#4
+    USR_BTN = BUTTON_USER,   // on Board
 
     RX_PIN_NUMBER  = p19,
     TX_PIN_NUMBER  = p20,
-    CTS_PIN_NUMBER = NC,
-    RTS_PIN_NUMBER = NC,
 
     // mBed interface Pins
     USBTX = TX_PIN_NUMBER,
     USBRX = RX_PIN_NUMBER,
     STDIO_UART_TX = TX_PIN_NUMBER,
     STDIO_UART_RX = RX_PIN_NUMBER,
-    STDIO_UART_CTS = CTS_PIN_NUMBER,
-    STDIO_UART_RTS = RTS_PIN_NUMBER,
 
     SPI_PSELMOSI0 = p15,
     SPI_PSELMISO0 = p16,
@@ -223,8 +227,15 @@ typedef enum {
     QSPI_FLASH1_IO2 = QSPI1_IO2,
     QSPI_FLASH1_IO3 = QSPI1_IO3,
     QSPI_FLASH1_SCK = QSPI1_SCK,
-    QSPI_FLASH1_CSN = QSPI1_CSN
+    QSPI_FLASH1_CSN = QSPI1_CSN,
 
+    // Not connected
+    NC = (int)0xFFFFFFFF,
+    CTS_PIN_NUMBER = NC,
+    RTS_PIN_NUMBER = NC,
+    STDIO_UART_CTS = CTS_PIN_NUMBER,
+    STDIO_UART_RTS = RTS_PIN_NUMBER
+          
 } PinName;
 
 typedef enum {
