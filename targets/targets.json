@@ -9836,6 +9836,7 @@
         "release_versions": ["5"],
         "device_name": "nRF52840_xxAA",
         "detect_code": ["1026"],
+        "device_has_remove": ["ITM"],
         "macros_add": [
             "CONFIG_GPIO_AS_PINRESET",
             "NRF52_ERRATA_20"
